@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading History</title>
+</head>
+<body>
+    <h1>Reading History</h1>
+
+    <!-- List of books in the reading history -->
+    <ul>
+        {% for item in reading_history %}
+            <li>{{ item.book.title }} - Read on: {{ item.date_read }}</li>
+        {% empty %}
+            <li>No reading history.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

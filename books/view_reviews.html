@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reviews</title>
+</head>
+<body>
+    <h1>Reviews for {{ book.title }}</h1>
+
+    <!-- Display reviews for the book -->
+    {% for review in reviews %}
+        <div>
+            <p><strong>User:</strong> {{ review.user.username }}</p>
+            <p><strong>Rating:</strong> {{ review.rating }}</p>
+            <p><strong>Review:</strong> {{ review.text }}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No reviews available for this book.</p>
+    {% endfor %}
+</body>
+</html>
